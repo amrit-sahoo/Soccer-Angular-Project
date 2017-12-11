@@ -1,0 +1,138 @@
+/*.nav>li>.header-text:hover {
+    text-decoration: none;
+    background-color: #dd493a !important;
+}*/
+ .nav-pills >li.active>a{
+	background-color:#1e4017c9 !important;
+	color:white !important ;
+}
+
+.nav-pills>li>a{
+	color:black !important;
+}
+
+body{
+	background-color: #e3e5e6;
+}
+.all-match {
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 -1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    margin: 2em -1em 4em 0;
+ }   
+
+ .match-info ul li {
+    display: block;
+    color: #B7B7B7;
+    
+    line-height: 1.8em;
+    margin: 1em 0 0 0;
+    border-bottom: solid 3px #EAEAEA;
+   
+    font-weight: 300;
+}
+.match-info ul {
+    padding: 0;
+
+    }
+ .match-heading{
+ 	padding:10px;
+ 	background-color: black;
+ 	color:white;
+ 	text-align:center;
+ 	font-weight:300;
+ 	font-size:1.3em;
+ 	
+ }   
+ .home-team{
+ 	text-align:right;
+ }
+ @media screen and (max-width:767px) {
+ 	.season-header{
+ 		margin-left:1.5rem;
+ 		margin-right:1.5rem;
+
+ 	}
+ 	.tab-content{
+ 		padding:0 15px 0 0 !important;
+ 	}
+ 	
+
+ }
+ @media screen and (min-width:768px){
+    .match-info ul li {
+        padding-bottom:5em ;
+        font-size:1.14em ;
+ 	}
+
+ }		
+
+@media screen and (min-width:634px) and  (max-width:767px){
+    .match-info ul li {
+        padding-bottom:4em ;
+        font-size:1.14em ;
+ 	}	
+
+ }
+ @media screen and (min-width:602px) and (max-width:633px){
+
+    .match-info ul li {
+        padding-bottom:5em;
+        font-size:1.1em;
+ 	}	
+
+ }
+ @media screen and (min-width:538px)  and (max-width:602px)  {
+
+ 	.match-info ul li {
+        padding-bottom:5em ;
+        font-size:0.9em ;
+ 	}	
+ }
+ @media screen and (max-width:537px){
+
+ 	
+ 	
+ 	.match-info ul li {
+        padding-bottom:5em;
+        font-size:1em;
+ 	}	
+
+
+ }
+ 
+ @media screen and (max-width:426px) {
+
+     /*.col-xxs-12 {
+     	width:100%;
+     	padding-right:5px;
+     	padding-left:5px;
+     	position:relative;
+     }*/
+     .col-xs-3 {
+     	width:100% !important;
+ 	    text-align:left !important;
+ 	     padding-left:5px !important;
+ 	     padding-right:5px !important;
+
+     }
+     
+     .match-info ul li {
+    padding-bottom: 10em;
+    font-size: 1.3em;
+
+    }
+
+    .home-team {
+    	text-align:center !important;
+    }
+
+    .away-team{
+    	text-align:center !important;
+    }
+    .date{
+    	text-align:center !important;
+    }
+
+ }
+

@@ -1,0 +1,106 @@
+<div class="row fllter-container">
+      	
+     <div class="row season-header" >
+             <ul class="nav nav-pills nav-justified">
+                 <li class="active"><a data-toggle="pill" ng-href="#menu1" target="_self" style="font-size: 1.5em">EPL 2015-16</a></li>
+                 <li><a data-toggle="pill" ng-href="#menu2" target="_self" style="font-size: 1.5em">EPL 2016-17</a></li>
+             </ul>
+             <div class="filter_search all-match col-md-3 col-sm-3 col-xs-12" style="min-height: 200px;margin-right:10px;min-width: 32% !important">
+             	
+             </div>
+             <div class="tab-content col-md-8 col-sm-8 col-xs-12">
+                            <div id="menu1" class="tab-pane fade in active">
+                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 ">
+				            				<div class="match-heading">
+				            					{{match.name}}
+				            				</div>
+				            				<div class="match-grid" ng-repeat="info in match.matches">
+				            					<div class="match-info">
+				            						<ul >
+				            							<li ><a href="#/single">
+				            								<div class="date col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				            								     {{info.date}}
+				            								</div>
+				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				            								     {{info.team1.name}}
+				            								</div>
+				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                    <p class="text-right">  {{info.score1}} </p>
+                                                                 </div>
+                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                   <p class="text-center">-</p>
+                                                                 </div>
+                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                   <p> {{info.score2}} </p>
+                                                                 </div>
+				            								</div>
+				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				            								     {{info.team2.name}}
+				            								</div>
+				            								</a>
+				            							</li>				            							
+				            							
+				            						 </ul>
+				            					</div>
+				            				</div>
+				            		 </div>
+                             </div>
+
+
+                             
+                             <div id="menu2" class="tab-pane fade">
+                                   <div class="all-match" ng-repeat="match in allMatches.allDetails16_17 ">
+				            				<div class="match-heading">
+				            					{{match.name}}
+				            				</div>
+				            				<div class="match-grid" ng-repeat="info in match.matches">
+				            					<div class="match-info">
+				            						<ul>
+				            							<li><a href="#/single">
+				            								<div class="date col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				            								     {{info.date}}
+				            								</div>
+				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				            								     {{info.team1.name}}
+				            								</div>
+				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                    <p class="text-right">  {{info.score1}} </p>
+                                                                 </div>
+                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                   <p class="text-center">-</p>
+                                                                 </div>
+                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                   <p> {{info.score2}} </p>
+                                                                 </div>
+				            								</div>
+				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				            								     {{info.team2.name}}
+				            								</div>
+				            								</a>
+				            							</li>	
+				            						</ul>
+				            					</div>
+				            				</div>
+				            		</div>
+                             </div>
+             
+             </div>
+
+                 
+             
+
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

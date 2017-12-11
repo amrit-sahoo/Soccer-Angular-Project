@@ -1,0 +1,85 @@
+myApp.controller('allMatchesController',['getService',function(getService){
+
+var main=this;
+this.allDetails16_17=[];
+this.allDetails15_16=[];
+this.allteams=[];
+this.matchdays_temp=[];
+this.matchdays=[];
+this.team1_list=[];
+this.team2_list=[];
+this.getDetails2016_17=function(){
+
+	getService.get2016_17()
+	.then(function success(response){
+            
+        main.allDetails16_17=response.data.rounds;
+        console.log(response);
+        console.log( main.allDetails16_17);
+        
+
+	},
+
+	function error(response){
+       alert("some error occured. See the console");
+       console.log(response);
+	});
+}//end getDetails2016_17
+
+this.getDetails2015_16=function(){
+
+	getService.get2015_16()
+	.then(function success(response){
+      
+        main.allDetails15_16=response.data.rounds;
+        console.log(response);
+        console.log(main.allDetails15_16);
+
+
+	},
+
+	function error(response){
+        alert("some error occured. See the console");
+        console.log(response);
+	});
+}//end getDetails2016_17
+
+this.getDetails2016_17();
+this.getDetails2015_16();
+
+
+// this.separateInfo=function(){
+     
+//      for(let match in main.allDetails15_16 ){
+//      	  main.matchdays_temp.push(main.allDetails15_16[match].name);
+     	 
+//      	   // for(let info in main.allDetails15_16[match].matches ){
+//      	   // 	   main.team1_list= main.team1_list.push( main.allDetails15_16[match].matches[info].team1.name);
+//      	   // 	   main.team2_list= main.team2_list.push( main.allDetails15_16[match].matches[info].team2.name);
+
+//      	   // }
+//      }
+//     console.log(main.matchdays_temp);
+//     // console.log(main.team1_list);
+//     // console.log(main.team2_list); 
+    
+// }
+// this.separateInfo();
+// // this.separateInfo(main.allDetails15_16);
+// // this.separateInfo(this.allDetails16_17);
+// this.matchdays=_.uniq(main.matchdays_temp);
+// this.allteams=_.uniq(main.team1_list.concat(main.team2_list));
+// //console.log(this.matchdays);
+//console.log(this.allteams);
+
+
+
+
+
+
+
+
+
+
+
+}]);//end controller
