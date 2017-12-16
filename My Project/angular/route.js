@@ -13,15 +13,15 @@ myApp.config(['$routeProvider', function($routeProvider){
         	controller 		: 'statsController',
         	controllerAs 	: 'teamStats'
         })
-        .when('/match/:id1/:id2/:date',{
-            templateUrl     : 'views/match-view.html',
+        .when('/single/:date/:team1/:team2/:score1/:score2',{
+            templateUrl     : 'views/single-match-view.html',
             controller      : 'singleMatchController',
             controllerAs    : 'match'
         })
         .otherwise(
             {
                 //redirectTo:'/'
-                template   : '<h1 style="margin-top:50px;"><center>Error 404 : Page not found</center></h1>'
+                template   : '<div style="min-height:340px"><h1 style="margin-top:50px;"><center>Error 404 : Page not found</center></h1></div>'
             }
         );
 }]);
