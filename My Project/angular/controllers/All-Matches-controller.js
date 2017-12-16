@@ -5,10 +5,10 @@ this.allDetails16_17=[];
 this.allDetails15_16=[];
 this.allteams=[];
 this.matchdays_temp=[];
-this.matchdays=[];
+this.matchdays=[]; 
 this.team1_list=[];
 this.team2_list=[];
-this.getDetails2016_17=function(){
+this.getDetails2016_17=function(separateInfo){
 
 	getService.get2016_17()
 	.then(function success(response){
@@ -16,6 +16,9 @@ this.getDetails2016_17=function(){
         main.allDetails16_17=response.data.rounds;
         console.log(response);
         console.log( main.allDetails16_17);
+        
+        main.separateInfo(main.allDetails16_17);
+        
         
 
 	},
@@ -26,7 +29,7 @@ this.getDetails2016_17=function(){
 	});
 }//end getDetails2016_17
 
-this.getDetails2015_16=function(){
+this.getDetails2015_16=function(separateInfo){
 
 	getService.get2015_16()
 	.then(function success(response){
@@ -34,6 +37,18 @@ this.getDetails2015_16=function(){
         main.allDetails15_16=response.data.rounds;
         console.log(response);
         console.log(main.allDetails15_16);
+        
+        main.separateInfo(main.allDetails15_16);
+        
+        console.log(main.matchdays_temp);
+        main.matchdays=_.uniq(main.matchdays_temp);
+        console.log(main.matchdays);
+         
+         console.log(main.team1_list);
+         console.log(main.team2_list);  
+         main.allteams=_.uniq(main.team1_list.concat(main.team2_list));
+    
+         console.log(main.allteams);
 
 
 	},
@@ -44,33 +59,26 @@ this.getDetails2015_16=function(){
 	});
 }//end getDetails2016_17
 
-this.getDetails2016_17();
-this.getDetails2015_16();
 
 
-// this.separateInfo=function(){
+this.separateInfo=function(season){
      
-//      for(let match in main.allDetails15_16 ){
-//      	  main.matchdays_temp.push(main.allDetails15_16[match].name);
+     for(let match in season ){
+     	  main.matchdays_temp.push(season[match].name);
      	 
-//      	   // for(let info in main.allDetails15_16[match].matches ){
-//      	   // 	   main.team1_list= main.team1_list.push( main.allDetails15_16[match].matches[info].team1.name);
-//      	   // 	   main.team2_list= main.team2_list.push( main.allDetails15_16[match].matches[info].team2.name);
+     	   for(let info in season[match].matches ){
+     	   	   main.team1_list.push( season[match].matches[info].team1.name);
+     	   	   main.team2_list.push( season[match].matches[info].team2.name);
 
-//      	   // }
-//      }
-//     console.log(main.matchdays_temp);
-//     // console.log(main.team1_list);
-//     // console.log(main.team2_list); 
-    
-// }
-// this.separateInfo();
-// // this.separateInfo(main.allDetails15_16);
-// // this.separateInfo(this.allDetails16_17);
-// this.matchdays=_.uniq(main.matchdays_temp);
-// this.allteams=_.uniq(main.team1_list.concat(main.team2_list));
-// //console.log(this.matchdays);
-//console.log(this.allteams);
+     	   }
+     }
+}
+
+
+
+
+this.getDetails2016_17(main.separateInfo);
+this.getDetails2015_16(main.separateInfo);
 
 
 
