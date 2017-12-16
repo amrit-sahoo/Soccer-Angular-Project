@@ -1,30 +1,60 @@
-<div class="row fllter-container">
+<div class="row">
       	
      <div class="row season-header" >
              <ul class="nav nav-pills nav-justified">
                  <li class="active"><a data-toggle="pill" ng-href="#menu1" target="_self" style="font-size: 1.5em">EPL 2015-16</a></li>
                  <li><a data-toggle="pill" ng-href="#menu2" target="_self" style="font-size: 1.5em">EPL 2016-17</a></li>
              </ul>
-             <div class="filter_search all-match col-md-3 col-sm-3 col-xs-12" style="min-height: 200px;margin-right:10px;min-width: 32% !important">
-             	
+             <div class="filter_search all-match col-md-3 col-sm-3 col-xs-12" style="min-height: 350px;margin-right:10px;min-width: 32% !important">
+                <form>
+                     <div class="filter filter_matchday col-md-12 col-sm-12 col-xs-3">
+                        <label>Filter by Matchday:</label>
+                   	     <select class="form-control form-" name="matchdays" ng-model="filterByMatchday" ng-options="matchday for matchday in allMatches.matchdays" >
+                                
+                   	     </select>
+                     </div> 
+                     <div class="filter filter_hometeam col-md-12 col-sm-12 col-xs-3">
+                   	     <label>Filter by Home Team:</label>
+                   	     <select class="form-control" name="home_teams" ng-model="filterByInfo.team1.name" ng-options="hometeam for hometeam in allMatches.allteams" >
+                                
+                   	     </select>
+                     </div>
+                     <div class="filter filter_awayteam col-md-12 col-sm-12 col-xs-3">
+                   	     <label>Filter by Away Team:</label>
+                   	     <select class="form-control" name="away_teams" ng-model="filterByInfo.team2.name" ng-options="awayteam for awayteam in allMatches.allteams">
+                              
+                   	     </select>
+                     </div>
+                     <div class="filter filter_date col-md-12 col-sm-12 col-xs-3">
+                   	      <label>Filter by Date:</label>
+                   	     <select class="form-control" name="dates" >
+                              
+                   	     </select>
+                     </div>
+                </form>  
+
+
+             
              </div>
-             <div class="tab-content col-md-8 col-sm-8 col-xs-12">
+             <div class="tab-content tabcontent col-md-8 col-sm-8 col-xs-12">
                             <div id="menu1" class="tab-pane fade in active">
-                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 ">
+                                    <!-- iterating over all the matchdays -->
+                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 | filter: filterByMatchday">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
-				            				<div class="match-grid" ng-repeat="info in match.matches">
+				            				<!-- iterating over all the matches --> 
+				            				<div class="match-grid" ng-repeat="info in match.matches | filter: filterByInfo">
 				            					<div class="match-info">
 				            						<ul >
-				            							<li ><a href="#/single">
+				            							<li ><a href="#/single/{{info.date}}/{{info.team1}}/{{info.team2}}/{{info.score1}}/{{info.score2}}">
 				            								<div class="date col-lg-2 col-md-2 col-sm-3 col-xs-3">
 				            								     {{info.date}}
 				            								</div>
 				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team1.name}}
+				            								     {{info.team1.name | uppercase}}
 				            								</div>
-				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" style="color:#de493a;">
                                                                  <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                                     <p class="text-right">  {{info.score1}} </p>
                                                                  </div>
@@ -36,7 +66,7 @@
                                                                  </div>
 				            								</div>
 				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team2.name}}
+				            								     {{info.team2.name | uppercase}}
 				            								</div>
 				            								</a>
 				            							</li>				            							
@@ -50,21 +80,21 @@
 
                              
                              <div id="menu2" class="tab-pane fade">
-                                   <div class="all-match" ng-repeat="match in allMatches.allDetails16_17 ">
+                                   <div class="all-match" ng-repeat="match in allMatches.allDetails16_17  | filter: filterByMatchday">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
-				            				<div class="match-grid" ng-repeat="info in match.matches">
+				            				<div class="match-grid" ng-repeat="info in match.matches | filter: filterByInfo">
 				            					<div class="match-info">
 				            						<ul>
-				            							<li><a href="#/single">
-				            								<div class="date col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				            							<li><a href="#/single/{{info.date}}/{{info.team1}}/{{info.team2}}/{{info.score1}}/{{info.score2}}">
+				            								<div class="date col-lg-2 col-md-2 col-sm-3 col-xs-3 col-xxs-12">
 				            								     {{info.date}}
 				            								</div>
-				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team1.name}}
+				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-12">
+				            								     {{info.team1.name | uppercase}}
 				            								</div>
-				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-xxs-12" style="color:#de493a;">
                                                                  <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                                     <p class="text-right">  {{info.score1}} </p>
                                                                  </div>
@@ -75,8 +105,8 @@
                                                                    <p> {{info.score2}} </p>
                                                                  </div>
 				            								</div>
-				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team2.name}}
+				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-12">
+				            								     {{info.team2.name | uppercase}}
 				            								</div>
 				            								</a>
 				            							</li>	
@@ -86,7 +116,7 @@
 				            		</div>
                              </div>
              
-             </div>
+             </div> <!-- end of the tabcontent -->
 
                  
              

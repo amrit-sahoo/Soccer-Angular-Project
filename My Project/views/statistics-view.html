@@ -1,0 +1,83 @@
+<div class="row">
+     <div class="container">
+         
+             <!-- creating a boostrap nav-pills for toogle between the two seasons -->
+             <ul class="nav nav-pills nav-justified">
+                 <li class="active"><a data-toggle="pill" ng-href="#menu1" target="_self" style="font-size: 1.5em">EPL 2015-16</a></li>
+                 <li><a data-toggle="pill" ng-href="#menu2" target="_self" style="font-size: 1.5em">EPL 2016-17</a></li>
+             </ul>
+
+         
+
+         <div class="tab-content">
+                 
+                 <div id="menu1" class="tab-pane fade in active table1">
+                      <table class="table table-responsive">
+                             <thead>
+                                 <tr>
+                                     <th>Rank</th>
+                                     <th>Team</th>
+                                     <th>Played</th>
+                                     <th>Won</th>
+                                     <th>Lost</th>
+                                     <th>Drawn</th>
+                                     <th>Total Goal</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                  <tr ng-repeat="team in teamStats.statsTable15_16 | orderBy:'-won'" ng-init="index=$index">
+                                     <td>{{index+1}}</td>
+                                     <td>{{team.name}}</td>
+                                     <td>{{team.played}}</td>
+                                     <td>{{team.won}}</td>
+                                     <td>{{team.lost}}</td>
+                                     <td>{{team.draw}}</td>
+                                     <td>{{team.goalCount}}</td>
+                                  </tr>
+                             </tbody>     
+                      </table>
+
+
+                 </div>
+                 <div id="menu2" class="tab-pane fade table2">
+
+                         <table class="table table-responsive">
+                             <thead>
+                                 <tr>
+                                     <th>Rank</th>
+                                     <th>Team</th>
+                                     <th>Played</th>
+                                     <th>Won</th>
+                                     <th>Lost</th>
+                                     <th>Draw</th>
+                                     <th>Total Goal</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                  <tr ng-repeat="team in teamStats.statsTable16_17 | orderBy:'-won'" ng-init="index2=$index">
+                                     <td>{{index2+1}}</td>
+                                     <td>{{team.name}}</td>
+                                     <td>{{team.played}}</td>
+                                     <td>{{team.won}}</td>
+                                     <td>{{team.lost}}</td>
+                                     <td>{{team.draw}}</td>
+                                     <td>{{team.goalCount}}</td>
+                                  </tr>
+                             </tbody>     
+
+                         </table>
+
+ 
+                 </div>
+
+
+         </div>
+         
+
+      </div>
+</div>
+
+
+
+
+
