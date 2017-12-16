@@ -10,25 +10,25 @@
                      <div class="filter filter_matchday col-md-12 col-sm-12 col-xs-3">
                         <label>Filter by Matchday:</label>
                    	     <select class="form-control form-" name="matchdays" ng-model="filterByMatchday" ng-options="matchday for matchday in allMatches.matchdays" >
-                                
+                              <option value=""> All </option>  
                    	     </select>
                      </div> 
                      <div class="filter filter_hometeam col-md-12 col-sm-12 col-xs-3">
                    	     <label>Filter by Home Team:</label>
                    	     <select class="form-control" name="home_teams" ng-model="filterByInfo.team1.name" ng-options="hometeam for hometeam in allMatches.allteams" >
-                                
+                               <option value=""> All </option>
                    	     </select>
                      </div>
                      <div class="filter filter_awayteam col-md-12 col-sm-12 col-xs-3">
                    	     <label>Filter by Away Team:</label>
                    	     <select class="form-control" name="away_teams" ng-model="filterByInfo.team2.name" ng-options="awayteam for awayteam in allMatches.allteams">
-                              
+                               <option value=""> All </option>
                    	     </select>
                      </div>
                      <div class="filter filter_date col-md-12 col-sm-12 col-xs-3">
                    	      <label>Filter by Date:</label>
                    	     <select class="form-control" name="dates" >
-                              
+                               <option value=""> All </option>
                    	     </select>
                      </div>
                 </form>  
