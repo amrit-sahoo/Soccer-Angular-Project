@@ -81,7 +81,17 @@ this.getDetails2016_17(main.separateInfo);
 this.getDetails2015_16(main.separateInfo);
 
 
-
+$(function() {
+            $( "#datepicker" ).datepicker({
+               
+               dateFormat:"yy-mm-dd",
+               altField: "#datepicker",
+               changeMonth: true,
+               changeYear:true,
+               autoSize: true,
+               //defaultDate: "2015-08-08" //starting day of EPL 2015-16 
+            });
+         });
 
 
 
