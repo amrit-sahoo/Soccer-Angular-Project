@@ -160,10 +160,18 @@ body{
  	}
 
  	.table{
- 		font-size: 0.9rem !important;
+ 		font-size: 1.2rem !important;
  	}	
 
  }
+
+ @media screen and (max-width:374px) {
+
+  .table{
+    font-size: 0.9rem !important;
+  } 
+ }
+
 
 .filter{
 	padding-top: 15px !important;
