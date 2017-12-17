@@ -1,6 +1,6 @@
 <div class="row">
       	
-     <div class="row season-header" >
+    <div class="row season-header" >
              <ul class="nav nav-pills nav-justified">
                  <li class="active"><a data-toggle="pill" ng-href="#menu1" target="_self" style="font-size: 1.5em">EPL 2015-16</a></li>
                  <li><a data-toggle="pill" ng-href="#menu2" target="_self" style="font-size: 1.5em">EPL 2016-17</a></li>
@@ -27,24 +27,25 @@
                      </div>
                      <div class="filter filter_date col-md-12 col-sm-12 col-xs-3">
                    	      <label>Filter by Date:</label>
-                   	      <input class="form-control" type = "text" id = "datepicker" ng-model="filterByInfo.date">
+                   	      <input class="form-control" type = "text" id = "datepicker" ng-model="filterByInfo.date"/>
                                
                    	     
                      </div>
-                </form>  
-
-
-             
+                </form>
              </div>
-             <div class="tab-content tabcontent col-md-8 col-sm-8 col-xs-12">
+             
+
+
+
+             <div class="tab-content tabcontent col-md-8 col-sm-8 col-xs-12">.
                             <div id="menu1" class="tab-pane fade in active">
                                     <!-- iterating over all the matchdays -->
-                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 | filter:{name:filterByMatchday||undefined}">
+                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 |filter:{name:filterByMatchday||undefined}">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
 				            				<!-- iterating over all the matches --> 
-				            				<div class="match-grid" ng-repeat="info in match.matches | filter: filterByInfo">
+				            				<div class="match-grid" ng-repeat="info in match.matches | filter:filterByInfo">
 				            					<div class="match-info">
 				            						<ul >
 				            							<li ><a href="#/single/{{info.date}}/{{info.team1}}/{{info.team2}}/{{info.score1}}/{{info.score2}}">
@@ -52,39 +53,39 @@
 				            								     {{info.date}}
 				            								</div>
 				            								<div class="home-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team1.name | uppercase}}
+				            								     {{info.team1.name | uppercase }}
 				            								</div>
 				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" style="color:#de493a;">
-                                                                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                    <p class="text-right">  {{info.score1}} </p>
-                                                                                                                 </div>
-                                                                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                   <p class="text-center">-</p>
-                                                                                                                 </div>
-                                                                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                   <p> {{info.score2}} </p>
-                                                                                                                 </div>
+                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                     <p class="text-right">  {{info.score1}} </p>
+                                                                 </div>
+                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                     <p class="text-center">-</p>
+                                                                 </div>
+                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                     <p> {{info.score2}} </p>
+                                                                 </div>
 				            								</div>
 				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				            								     {{info.team2.name | uppercase}}
+				            								     {{info.team2.name | uppercase }}
 				            								</div>
 				            								</a>
 				            							</li>				            							
 				            							
-				            						 </ul>
+				            				         </ul>
 				            					</div>
 				            				</div>
-				       </div>
-                             </div>
+				            		</div>
+                            </div>
 
 
                              
-                             <div id="menu2" class="tab-pane fade">
-                                       <div class="all-match" ng-repeat="match in allMatches.allDetails16_17  | filter:{name:filterByMatchday||undefined}">
+                            <div id="menu2" class="tab-pane fade">
+                                     <div class="all-match" ng-repeat="match in allMatches.allDetails16_17 |filter: {name:filterByMatchday||undefined}">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
-				            				<div class="match-grid" ng-repeat="info in match.matches | filter: filterByInfo">
+				            				<div class="match-grid" ng-repeat="info in match.matches | filter:filterByInfo ">
 				            					<div class="match-info">
 				            						<ul>
 				            							<li><a href="#/single/{{info.date}}/{{info.team1}}/{{info.team2}}/{{info.score1}}/{{info.score2}}">
@@ -95,15 +96,15 @@
 				            								     {{info.team1.name | uppercase}}
 				            								</div>
 				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-xxs-12" style="color:#de493a;">
-                                                                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                    <p class="text-right">  {{info.score1}} </p>
-                                                                                                                 </div>
-                                                                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                   <p class="text-center">-</p>
-                                                                                                                 </div>
-                                                                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                                                                   <p> {{info.score2}} </p>
-                                                                                                                 </div>
+                                                                <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                     <p class="text-right">  {{info.score1}} </p>
+                                                                </div>
+                                                                <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                      <p class="text-center">-</p>
+                                                                </div>
+                                                                <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                      <p> {{info.score2}} </p>
+                                                                </div>
 				            								</div>
 				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-12">
 				            								     {{info.team2.name | uppercase}}
@@ -113,14 +114,12 @@
 				            						</ul>
 				            					</div>
 				            				</div>
-				        </div>
-                             </div>
+				            	    </div><!-- end .all-match -->
+                            </div><!-- end menu2 -->
              
              </div> <!-- end of the tabcontent -->
 
                  
-             
-
      </div>
 </div>
 
