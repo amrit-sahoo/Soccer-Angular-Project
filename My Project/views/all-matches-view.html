@@ -39,7 +39,7 @@
              <div class="tab-content tabcontent col-md-8 col-sm-8 col-xs-12">
                             <div id="menu1" class="tab-pane fade in active">
                                     <!-- iterating over all the matchdays -->
-                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 | filter: filterByMatchday">
+                                    <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 | filter:{name:filterByMatchday||undefined}">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
@@ -55,15 +55,15 @@
 				            								     {{info.team1.name | uppercase}}
 				            								</div>
 				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" style="color:#de493a;">
-                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                    <p class="text-right">  {{info.score1}} </p>
-                                                                 </div>
-                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                   <p class="text-center">-</p>
-                                                                 </div>
-                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                   <p> {{info.score2}} </p>
-                                                                 </div>
+                                                                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                    <p class="text-right">  {{info.score1}} </p>
+                                                                                                                 </div>
+                                                                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                   <p class="text-center">-</p>
+                                                                                                                 </div>
+                                                                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                   <p> {{info.score2}} </p>
+                                                                                                                 </div>
 				            								</div>
 				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3">
 				            								     {{info.team2.name | uppercase}}
@@ -80,7 +80,7 @@
 
                              
                              <div id="menu2" class="tab-pane fade">
-                                   <div class="all-match" ng-repeat="match in allMatches.allDetails16_17  | filter: filterByMatchday">
+                                   <div class="all-match" ng-repeat="match in allMatches.allDetails16_17  | filter:{name:filterByMatchday||undefined}">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
@@ -95,15 +95,15 @@
 				            								     {{info.team1.name | uppercase}}
 				            								</div>
 				            								<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 col-xxs-12" style="color:#de493a;">
-                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                    <p class="text-right">  {{info.score1}} </p>
-                                                                 </div>
-                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                   <p class="text-center">-</p>
-                                                                 </div>
-                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                   <p> {{info.score2}} </p>
-                                                                 </div>
+                                                                                                                 <div class=" score1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                    <p class="text-right">  {{info.score1}} </p>
+                                                                                                                 </div>
+                                                                                                                 <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                   <p class="text-center">-</p>
+                                                                                                                 </div>
+                                                                                                                 <div class="score2 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                                                   <p> {{info.score2}} </p>
+                                                                                                                 </div>
 				            								</div>
 				            								<div class="away-team col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-12">
 				            								     {{info.team2.name | uppercase}}
