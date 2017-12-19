@@ -8,26 +8,24 @@
              <div class="filter_search all-match col-md-3 col-sm-3 col-xs-12" style="min-height: 350px;margin-right:10px;min-width: 32% !important">
                 <form>
                      <div class="filter filter_matchday col-md-12 col-sm-12 col-xs-3">
-                        <label>Filter by Matchday:</label>
-                   	     <select class="form-control form-" name="matchdays" ng-model="filterByMatchday" ng-options="matchday for matchday in allMatches.matchdays" >
-                              <option value=""> All </option>  
-                   	     </select>
+                         <label>Search by Matchday:</label>
+                   	     
+                         <input class="form-control" type = "text"  ng-model="filterByMatchday"/>
                      </div> 
                      <div class="filter filter_hometeam col-md-12 col-sm-12 col-xs-3">
-                   	     <label>Filter by Home Team:</label>
-                   	     <select class="form-control" name="home_teams" ng-model="filterByInfo.team1.name" ng-options="hometeam for hometeam in allMatches.allteams" >
-                               <option value=""> All </option>
-                   	     </select>
+                   	     <label>Search by Home Team:</label>
+                   	     
+                         <input class="form-control" type = "text"  ng-model="filterByInfo.team1.name"/>
                      </div>
                      <div class="filter filter_awayteam col-md-12 col-sm-12 col-xs-3">
-                   	     <label>Filter by Away Team:</label>
-                   	     <select class="form-control" name="away_teams" ng-model="filterByInfo.team2.name" ng-options="awayteam for awayteam in allMatches.allteams">
-                               <option value=""> All </option>
-                   	     </select>
+                   	     <label>Search by Away Team:</label>
+                   	    
+                         <input class="form-control" type = "text"  ng-model="filterByInfo.team2.name"/>
                      </div>
                      <div class="filter filter_date col-md-12 col-sm-12 col-xs-3">
-                   	      <label>Filter by Date:</label>
-                   	      <input class="form-control" type = "text" id = "datepicker" ng-model="filterByInfo.date"/>
+                   	      <label>Search by Date:</label>
+                   	      
+                          <input class="form-control" type = "text" id = "datepicker" ng-model="filterByInfo.date"/>
                                
                    	     
                      </div>
@@ -40,7 +38,7 @@
              <div class="tab-content tabcontent col-md-8 col-sm-8 col-xs-12">.
                   <div id="menu1" class="tab-pane fade in active">
                                     <!-- iterating over all the matchdays -->
-                        <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 |filter:{name:filterByMatchday||undefined}">
+                        <div class="all-match"  ng-repeat="match in allMatches.allDetails15_16 | filter:filterByMatchday">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
@@ -81,11 +79,11 @@
 
                              
                   <div id="menu2" class="tab-pane fade">
-                        <div class="all-match" ng-repeat="match in allMatches.allDetails16_17 |filter: {name:filterByMatchday||undefined}">
+                        <div class="all-match" ng-repeat="match in allMatches.allDetails16_17 | filter:filterByMatchday">
 				            				<div class="match-heading">
 				            					{{match.name}}
 				            				</div>
-				            				<div class="match-grid" ng-repeat="info in match.matches | filter:filterByInfo ">
+				            				<div class="match-grid" ng-repeat="info in match.matches | filter: filterByInfo ">
 				            					<div class="match-info">
 				            						<ul>
 				            							<li><a href="#/single/{{info.date}}/{{info.team1}}/{{info.team2}}/{{info.score1}}/{{info.score2}}">
