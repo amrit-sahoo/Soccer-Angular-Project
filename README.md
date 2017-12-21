@@ -5,6 +5,6 @@ This is a soccer app which has 3 views:
 2. A view ro display details of a particular match.
 3. A view which display the team wise statistics of a particular season.
 
-The datas were fetched from following two APIs:
+The data were fetched from following two APIs:
 1.https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json
 2.https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json
